@@ -35,6 +35,6 @@ namespace SteamOverlay {
 		return FindSigEx(pStartAddr, pEndAddr, szSig);
 	}
 	uintptr_t GetModule() {
-		return (uintptr_t)GetModuleHandle(L"GameOverlayRenderer.dll");
+		return (uintptr_t)GetModuleHandle("GameOverlayRenderer.dll");
 	}
 }

@@ -15,7 +15,9 @@ namespace Hooks {
 				if (hWnd) {
 					ImGui::CreateContext();
 					ImGuiIO& io = ImGui::GetIO();
+					io.Fonts->AddFontDefault();
 					Globals::TitleFont = io.Fonts->AddFontFromMemoryCompressedTTF(MuseoSansCompressedData, MuseoSansCompressedSize, 25.f);
+					Globals::SmallFont = io.Fonts->AddFontFromMemoryCompressedTTF(MuseoSansCompressedData, MuseoSansCompressedSize, 17.0f);
 					ImGui_ImplWin32_Init(hWnd);
 					ImGui_ImplDX9_Init(pDevice);
 					if (Globals::WindowPosition.x == 0 && Globals::WindowPosition.y == 0) {
@@ -36,6 +38,8 @@ namespace Hooks {
 				if ((GetAsyncKeyState(VK_F6) & 0x1)) Settings::ToggleMenu = !Settings::ToggleMenu;
 
 				if (Menu::IsUIOpen()) Menu::RenderUI();
+
+				ESP::Render(ImGui::GetBackgroundDrawList());
 
 				ImGui::EndFrame();
 				ImGui::Render();
@@ -63,7 +67,11 @@ namespace Hooks {
 		uintptr_t pSteamPresentAddr = SteamOverlay::FindSig("GameOverlayRenderer.dll", "FF 15 ? ? ? ? 8B F0 85 FF") + 2;
 		Present::oPresent = **reinterpret_cast<decltype(&Present::oPresent)*>(pSteamPresentAddr);
 		**reinterpret_cast<void***>(pSteamPresentAddr) = reinterpret_cast<void*>(&Present::hkPresent);
-		oWndProc = (WNDPROC)SetWindowLongPtr(FindWindowA("Valve001", NULL), GWLP_WNDPROC, (LONG_PTR)WndProc);
+		oWndProc = (WNDPROC)SetWindowLongA(FindWindowA("Valve001", NULL), GWLP_WNDPROC, (LONG)WndProc);
+		/*Interfaces*/
+		//Interface.Panel = CSGO::CreateInterface<IPanel*>((PVOID)GetModuleHandleA("vgui2.dll"), "VGUI_Panel009");
+		Interface.Engine = Interface.CreateInterface<IEngineClient*>((PVOID)GetModuleHandleA("engine.dll"), "VEngineClient014");
+		Interface.EntityList = Interface.CreateInterface<CBaseEntityList*>((PVOID)GetModuleHandleA("client.dll"), "VClientEntityList003");
 		return true;
 	}
 }

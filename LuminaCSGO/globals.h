@@ -6,4 +6,6 @@ namespace Globals {
 	IDirect3DTexture9* MenuBackground;
 	ImVec2 WindowPosition = ImVec2(0, 0);
 	ImFont* TitleFont;
+	ImFont* SmallFont;
+	CBaseEntity* pLocal;
 }

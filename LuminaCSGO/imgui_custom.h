@@ -42,4 +42,63 @@ namespace ImGui {
 	bool ColorBar(const char* label, const ImVec2& size_arg) {
 		return ColorBarEx(label, size_arg, 0);
 	}
+
+	void CreateGroupBox(const char* title, const char* unique_id, int pos)
+	{
+
+		PushStyleColor(ImGuiCol_ChildBg, IM_COL32(16, 13, 32, 50));
+		PushStyleColor(ImGuiCol_Border, IM_COL32(255, 17, 23, 200));
+
+		ImVec2 size;
+		switch (pos) {
+		case 1: //Full left
+			size = ImVec2(320, 540);
+			SetCursorPos(ImVec2(10, 10));
+			break;
+		case 2: //Full right
+			size = ImVec2(320, 540);
+			SetCursorPos(ImVec2(340, 10));
+			break;
+		case 3: //Smalltopleft
+			size = ImVec2(320, (540 / 2) - 5);
+			SetCursorPos(ImVec2(10, 10));
+			break;
+		case 4: //Smalltopright
+			size = ImVec2(320, (540 / 2) - 5);
+			SetCursorPos(ImVec2(340, 10));
+			break;
+		case 5: //Smallbottumleft
+			size = ImVec2(320, (540 / 2) - 5);
+			SetCursorPos(ImVec2(10, 285));
+			break;
+		case 6: //smallbottumright
+			size = ImVec2(320, (540 / 2) - 5);
+			SetCursorPos(ImVec2(340, 285));
+			break;
+		}
+
+		BeginChild(title, size, true);
+		{
+			PopStyleColor();
+			PopStyleColor();
+
+			PushStyleColor(ImGuiCol_ChildBg, IM_COL32(0, 0, 0, 0));
+			PushStyleColor(ImGuiCol_Border, IM_COL32(30, 26, 45, 255));
+			BeginChild(unique_id, ImVec2(size.x, 30), true);
+			{
+				PopStyleColor();
+				PopStyleColor();
+			    BringRightAndDown(ImVec2(10, 6));
+				ImGui::PushFont(Globals::SmallFont);
+				ImGui::Text(title);
+				ImGui::PopFont();
+			}
+			EndChild();
+
+			Spacing();
+			Spacing();
+		}
+	}
+
+	void EndGroupBox() { EndChild(); }
 }

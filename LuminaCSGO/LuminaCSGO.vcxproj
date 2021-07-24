@@ -23,14 +23,14 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{d57232fc-a551-430e-b058-371929cd6b94}</ProjectGuid>
     <RootNamespace>LuminaCSGO</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -156,9 +156,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.hpp" />
+    <ClInclude Include="CBaseEntity.h" />
+    <ClInclude Include="CBaseEntityList.h" />
+    <ClInclude Include="CInterface.h" />
+    <ClInclude Include="ClientClass.h" />
+    <ClInclude Include="ESP.h" />
+    <ClInclude Include="features.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="hook.h" />
     <ClInclude Include="IconFont.h" />
+    <ClInclude Include="IEngineClient.h" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
     <ClInclude Include="ImGui\imgui_impl_dx9.h" />
@@ -169,6 +176,7 @@
     <ClInclude Include="ImGui\imstb_truetype.h" />
     <ClInclude Include="imgui_custom.h" />
     <ClInclude Include="includes.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="MinHook\include\MinHook.h" />
     <ClInclude Include="MinHook\src\buffer.h" />
@@ -181,6 +189,9 @@
     <ClInclude Include="MuseoSans.h" />
     <ClInclude Include="settings.h" />
     <ClInclude Include="SteamOverlay.h" />
+    <ClInclude Include="ValveDefines.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="VirtualMethod.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MinHook\dll_resources\MinHook.def" />

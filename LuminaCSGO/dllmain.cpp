@@ -19,7 +19,7 @@ VOID WINAPI HookThread(void* instance) {
 BOOL WINAPI DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved) {
 	switch (dwReason) {
 	case DLL_PROCESS_ATTACH:
-		CloseHandle(CreateThread(0, 0, (LPTHREAD_START_ROUTINE)HookThread, hModule, 0, 0));
+		CreateThread(0, 0, (LPTHREAD_START_ROUTINE)HookThread, hModule, 0, 0);
 		break;
 	default:
 		break;

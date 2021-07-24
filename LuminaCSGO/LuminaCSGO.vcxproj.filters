@@ -53,9 +53,6 @@
     <Filter Include="LuminaCSGO\Internals\Render\Custom ImGui">
       <UniqueIdentifier>{b7bc7eee-ef93-4a6e-8437-0c204e0e3218}</UniqueIdentifier>
     </Filter>
-    <Filter Include="LuminaCSGO\Internals\Render\Draw">
-      <UniqueIdentifier>{07de99fb-348c-4301-8b5a-c23aa2c0a233}</UniqueIdentifier>
-    </Filter>
     <Filter Include="LuminaCSGO\Internals\Render\Menu">
       <UniqueIdentifier>{80c9a109-9d2c-4a2e-9b82-2b43b5cc38c8}</UniqueIdentifier>
     </Filter>
@@ -67,6 +64,18 @@
     </Filter>
     <Filter Include="LuminaCSGO\Internals\Render\Fonts">
       <UniqueIdentifier>{cb852016-0b32-42c8-9ffe-f6e827450b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Render\Draw">
+      <UniqueIdentifier>{07de99fb-348c-4301-8b5a-c23aa2c0a233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Features">
+      <UniqueIdentifier>{d3c7f43c-9da5-4b67-95b3-bdfa98b476b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Features\Hacks">
+      <UniqueIdentifier>{a65ec4d1-1d23-4cf8-b511-e63bc92903ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\Valve SDK">
+      <UniqueIdentifier>{ff78a45e-6276-456e-a883-52fbfb5c9e12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +194,39 @@
     </ClInclude>
     <ClInclude Include="IconFont.h">
       <Filter>LuminaCSGO\Internals\Render\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="features.h">
+      <Filter>LuminaCSGO\Internals\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="ESP.h">
+      <Filter>LuminaCSGO\Internals\Features\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualMethod.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="ValveDefines.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CInterface.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseEntity.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseEntityList.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="IEngineClient.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientClass.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

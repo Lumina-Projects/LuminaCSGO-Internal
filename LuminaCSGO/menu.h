@@ -38,6 +38,13 @@ namespace Menu {
         ImGui::PushStyleColor(ImGuiCol_Border, IM_COL32(23, 21, 21, 255));
         ImGui::BeginChild("##MenuBar", ImVec2(670, 560), true); {
             ImGui::PopStyleColor();
+            ImGui::CreateGroupBox("Visuals", "aimbot_child", 1);
+            ImGui::PushFont(Globals::SmallFont);
+            ImGui::Checkbox("Enable", &Settings::EnableESP);
+            ImGui::Checkbox("Box ESP", &Settings::BoxESP);
+            ImGui::Checkbox("Name ESP", &Settings::NameESP);
+            ImGui::PopFont();
+            ImGui::EndGroupBox();
             ImGui::EndChild();
         }
 		ImGui::End();
