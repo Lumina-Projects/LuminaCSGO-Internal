@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="LuminaCSGO">
+      <UniqueIdentifier>{e6429e78-44f3-4ce1-875e-5b135c905906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals">
+      <UniqueIdentifier>{60990d76-b003-45c7-827f-95a6fb9dcf83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals">
+      <UniqueIdentifier>{189dbd26-2c7e-4497-b489-8f2e8ef083a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Header Files">
+      <UniqueIdentifier>{c9d0a6f7-5586-4fbb-ae9c-8228ee9526c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\SteamOverlay">
+      <UniqueIdentifier>{49c89f24-8aef-4a24-8e84-ff6e7921a06f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Hooks">
+      <UniqueIdentifier>{ba501055-255a-4e10-afcd-c1b1d7b0b151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\MinHook">
+      <UniqueIdentifier>{061ffd89-8d0d-4581-a8ce-1387c57074aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\MinHook\src">
+      <UniqueIdentifier>{f855d1de-7412-4dac-b6b8-1dbf6c0a7c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\MinHook\src\hde">
+      <UniqueIdentifier>{d77f57d0-efc0-428f-a9fa-10f1f67bd777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\MinHook\include">
+      <UniqueIdentifier>{08505d44-11d3-455b-9b54-4c1d4379c0f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\MinHook\dll_resources">
+      <UniqueIdentifier>{7b49df71-338a-477f-a882-85867472c50f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Externals\ImGui">
+      <UniqueIdentifier>{0398a5eb-6433-49ab-933f-91f8f168bb6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Storage">
+      <UniqueIdentifier>{2680e7eb-055b-471c-894c-f9c5b84864f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Storage\Globals">
+      <UniqueIdentifier>{31efa61c-ea2f-4b5c-bf74-e7d402e9a008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Render">
+      <UniqueIdentifier>{c592ea88-1a5d-473c-87ea-ee3d72ee251a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Render\Custom ImGui">
+      <UniqueIdentifier>{b7bc7eee-ef93-4a6e-8437-0c204e0e3218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Render\Draw">
+      <UniqueIdentifier>{07de99fb-348c-4301-8b5a-c23aa2c0a233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Render\Menu">
+      <UniqueIdentifier>{80c9a109-9d2c-4a2e-9b82-2b43b5cc38c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Storage\Settings">
+      <UniqueIdentifier>{5cf7b10d-8641-4a18-8286-dc01d3002625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Render\Background">
+      <UniqueIdentifier>{63616532-7876-47dc-bf19-da3f6dc70f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuminaCSGO\Internals\Render\Fonts">
+      <UniqueIdentifier>{cb852016-0b32-42c8-9ffe-f6e827450b1d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>LuminaCSGO\Internals\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\buffer.c">
+      <Filter>LuminaCSGO\Externals\MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hook.c">
+      <Filter>LuminaCSGO\Externals\MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\trampoline.c">
+      <Filter>LuminaCSGO\Externals\MinHook\src</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hde\hde32.c">
+      <Filter>LuminaCSGO\Externals\MinHook\src\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\src\hde\hde64.c">
+      <Filter>LuminaCSGO\Externals\MinHook\src\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_dx9.cpp">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes.h">
+      <Filter>LuminaCSGO\Internals\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hook.h">
+      <Filter>LuminaCSGO\Internals\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamOverlay.h">
+      <Filter>LuminaCSGO\Externals\SteamOverlay</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\buffer.h">
+      <Filter>LuminaCSGO\Externals\MinHook\src</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\trampoline.h">
+      <Filter>LuminaCSGO\Externals\MinHook\src</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\hde\hde32.h">
+      <Filter>LuminaCSGO\Externals\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\hde\hde64.h">
+      <Filter>LuminaCSGO\Externals\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\hde\pstdint.h">
+      <Filter>LuminaCSGO\Externals\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\hde\table32.h">
+      <Filter>LuminaCSGO\Externals\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\src\hde\table64.h">
+      <Filter>LuminaCSGO\Externals\MinHook\src\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\include\MinHook.h">
+      <Filter>LuminaCSGO\Externals\MinHook\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_dx9.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>LuminaCSGO\Externals\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>LuminaCSGO\Internals\Storage\Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>LuminaCSGO\Internals\Render\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.h">
+      <Filter>LuminaCSGO\Internals\Storage\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.hpp">
+      <Filter>LuminaCSGO\Internals\Render\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_custom.h">
+      <Filter>LuminaCSGO\Internals\Render\Custom ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="MuseoSans.h">
+      <Filter>LuminaCSGO\Internals\Render\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="IconFont.h">
+      <Filter>LuminaCSGO\Internals\Render\Fonts</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MinHook\dll_resources\MinHook.def">
+      <Filter>LuminaCSGO\Externals\MinHook\dll_resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MinHook\dll_resources\MinHook.rc">
+      <Filter>LuminaCSGO\Externals\MinHook\dll_resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
