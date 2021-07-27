@@ -6176,14 +6176,14 @@ void ImGui::PopTextWrapPos()
 }
 
 // FIXME: This may incur a round-trip (if the end user got their data from a float4) but eventually we aim to store the in-flight colors as ImU32
-void ImGui::PushStyleColor(ImGuiCol idx, ImU32 col)
+void ImGui::PushStyleColor(ImGuiCol idx, ImColor col)
 {
     ImGuiContext& g = *GImGui;
     ImGuiColorMod backup;
     backup.Col = idx;
     backup.BackupValue = g.Style.Colors[idx];
     g.ColorModifiers.push_back(backup);
-    g.Style.Colors[idx] = ColorConvertU32ToFloat4(col);
+    g.Style.Colors[idx] = col;
 }
 
 void ImGui::PushStyleColor(ImGuiCol idx, const ImVec4& col)

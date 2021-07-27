@@ -15,9 +15,11 @@ namespace Hooks {
 				if (hWnd) {
 					ImGui::CreateContext();
 					ImGuiIO& io = ImGui::GetIO();
+					io.Fonts->AddFontFromMemoryCompressedTTF(MuseoSansCompressedData, MuseoSansCompressedSize, 20.0f);
 					io.Fonts->AddFontDefault();
 					Globals::TitleFont = io.Fonts->AddFontFromMemoryCompressedTTF(MuseoSansCompressedData, MuseoSansCompressedSize, 25.f);
 					Globals::SmallFont = io.Fonts->AddFontFromMemoryCompressedTTF(MuseoSansCompressedData, MuseoSansCompressedSize, 17.0f);
+					Globals::IconFont = io.Fonts->AddFontFromMemoryCompressedTTF(IconCompressedData, IconCompressedSize, 20.0f);
 					ImGui_ImplWin32_Init(hWnd);
 					ImGui_ImplDX9_Init(pDevice);
 					if (Globals::WindowPosition.x == 0 && Globals::WindowPosition.y == 0) {
@@ -35,8 +37,6 @@ namespace Hooks {
 				ImGui_ImplWin32_NewFrame();
 				ImGui::NewFrame();
 
-				if ((GetAsyncKeyState(VK_F6) & 0x1)) Settings::ToggleMenu = !Settings::ToggleMenu;
-
 				if (Menu::IsUIOpen()) Menu::RenderUI();
 
 				ESP::Render(ImGui::GetBackgroundDrawList());
@@ -49,10 +49,37 @@ namespace Hooks {
 		}
 	}
 
+	namespace PaintTraverse {
+		typedef VOID(__thiscall* PaintTraverse)(IPanel*, DWORD, BOOLEAN, BOOLEAN);
+		PaintTraverse oPaintTraverse;
+
+		VOID WINAPI hkPaintTraverse(DWORD dwPanel, BOOLEAN bForceRepaint, BOOLEAN bAllowRepaint) {
+			if (fnv::hash(Interface.Panel->GetPanelName(dwPanel)) == 0x8BE56F81 /* fnv::hash("FocusOverlayPanelj") = 0x8BE56F81 */) {
+				Interface.Panel->SetInputMouseState(dwPanel, Settings::ToggleMenu);
+				Interface.Panel->SetInputKeyboardState(dwPanel, Settings::ToggleMenu);
+			}
+			return oPaintTraverse(Interface.Panel, dwPanel, bForceRepaint, bAllowRepaint);
+		}
+	}
+
+	namespace CreateMove {
+		typedef BOOLEAN(WINAPI* CreateMove)(FLOAT, CUserCmd*);
+		CreateMove oCreateMove;
+
+		BOOLEAN WINAPI hkCreateMove(FLOAT flInputSampleTime, CUserCmd* cmd) {
+			BOOLEAN bCreateMove = oCreateMove(flInputSampleTime, cmd);
+			if (cmd->m_nCommandNumber % 4 == 1) {
+				Misc::RenderCreateMoveCVar(); /*We have to put this heres because CVars need to be on 1 tick*/
+			}
+			return bCreateMove;
+		}
+	}
+
 	WNDPROC oWndProc;
 
 	/*Window Process*/
 	LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+		if (uMsg == WM_KEYUP && (wParam == VK_INSERT)) Settings::ToggleMenu = !Settings::ToggleMenu;
 		if (true && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam)) return TRUE;
 		return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 	}
@@ -69,9 +96,20 @@ namespace Hooks {
 		**reinterpret_cast<void***>(pSteamPresentAddr) = reinterpret_cast<void*>(&Present::hkPresent);
 		oWndProc = (WNDPROC)SetWindowLongA(FindWindowA("Valve001", NULL), GWLP_WNDPROC, (LONG)WndProc);
 		/*Interfaces*/
-		//Interface.Panel = CSGO::CreateInterface<IPanel*>((PVOID)GetModuleHandleA("vgui2.dll"), "VGUI_Panel009");
-		Interface.Engine = Interface.CreateInterface<IEngineClient*>((PVOID)GetModuleHandleA("engine.dll"), "VEngineClient014");
-		Interface.EntityList = Interface.CreateInterface<CBaseEntityList*>((PVOID)GetModuleHandleA("client.dll"), "VClientEntityList003");
+		Interface.Initialize();
+		/*Interfaces Hook*/
+		if (MH_CreateHook((*reinterpret_cast<PVOID**>(Interface.Panel))[41], &PaintTraverse::hkPaintTraverse, (PVOID*)&PaintTraverse::oPaintTraverse) != MH_OK) {
+			MessageBoxA(NULL, "Failed to initialize hkPaintTraverse!", "Lumina Error | 0x003", MB_OK | MB_ICONERROR);
+			return false;
+		}
+		if (MH_CreateHook((*reinterpret_cast<PVOID**>(Interface.ClientMode))[24], &CreateMove::hkCreateMove, (PVOID*)&CreateMove::oCreateMove) != MH_OK) {
+			MessageBoxA(NULL, "Failed to initialize hkCreateMove!", "Lumina Error | 0x004", MB_OK | MB_ICONERROR);
+			return false;
+		}
+		if (MH_EnableHook(MH_ALL_HOOKS) != MH_OK) {
+			MessageBoxA(NULL, "Failed to enable hooks!", "Lumina Error | 0x005", MB_OK | MB_ICONERROR);
+			return false;
+		}
 		return true;
 	}
 }

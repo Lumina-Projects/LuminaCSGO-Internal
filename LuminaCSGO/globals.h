@@ -7,5 +7,6 @@ namespace Globals {
 	ImVec2 WindowPosition = ImVec2(0, 0);
 	ImFont* TitleFont;
 	ImFont* SmallFont;
+	ImFont* IconFont;
 	CBaseEntity* pLocal;
 }

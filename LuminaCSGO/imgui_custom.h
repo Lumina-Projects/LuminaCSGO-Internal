@@ -47,7 +47,7 @@ namespace ImGui {
 	{
 
 		PushStyleColor(ImGuiCol_ChildBg, IM_COL32(16, 13, 32, 50));
-		PushStyleColor(ImGuiCol_Border, IM_COL32(255, 17, 23, 200));
+		PushStyleColor(ImGuiCol_Border, IM_COL32(23, 21, 21, 255));
 
 		ImVec2 size;
 		switch (pos) {
@@ -83,7 +83,7 @@ namespace ImGui {
 			PopStyleColor();
 
 			PushStyleColor(ImGuiCol_ChildBg, IM_COL32(0, 0, 0, 0));
-			PushStyleColor(ImGuiCol_Border, IM_COL32(30, 26, 45, 255));
+			PushStyleColor(ImGuiCol_Border, IM_COL32(23, 21, 21, 255));
 			BeginChild(unique_id, ImVec2(size.x, 30), true);
 			{
 				PopStyleColor();

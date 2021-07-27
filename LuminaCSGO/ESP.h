@@ -58,34 +58,94 @@ public:
 
 namespace ESP {
 	void RenderPlayerBox(CBaseEntity* player, ImDrawList* draw) {
-        if (!Settings::BoxESP) return;
+        if (!Settings::Visuals.bEnableBox) return;
 
         const auto collideable = player->GetCollideable();
         const BoundingBox bbox{ collideable->obbMins(), collideable->obbMaxs(), player->ToWorldTransform() };
         if (!bbox) return;
-        draw->AddRect(bbox.min, bbox.max, ImColor(255, 255, 255), 0, 0);
-        draw->AddRect(ImVec2(bbox.min.x + 1, bbox.min.y + 1), ImVec2(bbox.max.x - 2, bbox.max.y - 2), ImColor(0, 0, 0), 0, 0);
-        draw->AddRect(ImVec2(bbox.min.x - 1, bbox.min.y - 1), ImVec2(bbox.max.x + 2, bbox.max.y + 2), ImColor(0, 0, 0), 0, 0);
+
+        switch (Settings::Visuals.Box.iBoxType) {
+        case 0:
+            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.max.x, bbox.max.y, ImColor(255, 255, 255), 2, true);
+            break;
+        case 1:
+            //draw->AddRectFilled(ImVec2(bbox.min.x, bbox.max.y), ImVec2(bbox.min.x + 1.0f, bbox.max.y - flQuarterHeight), ImColor(255, 255, 255));
+            //draw->AddRectFilled(ImVec2(bbox.min.x, bbox.max.y - 1.0f), ImVec2(bbox.min.x + flQuarterWidth, bbox.max.y), ImColor(255, 255, 255));
+            //draw->AddRectFilled(bbox.max, ImVec2(bbox.max.x - flQuarterWidth, bbox.max.y - 1.0f), ImColor(255, 255, 255));
+            //draw->AddRectFilled(bbox.max, ImVec2(bbox.max.x - 1.0f, bbox.max.y - flQuarterHeight), ImColor(255, 255, 255));
+            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + 1.f, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.max.x, bbox.min.y, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.max.x - 1.0f, bbox.min.y, bbox.max.x, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.min.x, bbox.max.y, bbox.min.x + 1.0f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.min.x, bbox.max.y - 1.0f, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y, ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.max.x, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y - 1.0f, ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.max.x, bbox.max.y, bbox.max.x - 1.0f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
+            break;
+        }
 	}
 
     void RenderName(CBaseEntity* player, ImDrawList* draw, int index) {
-        if (!Settings::NameESP) return;
+        if (!Settings::Visuals.bName) return;
 
         const auto collideable = player->GetCollideable();
         const BoundingBox bbox{ collideable->obbMins(), collideable->obbMaxs(), player->ToWorldTransform() };
         if (!bbox) return;
         SPlayerInfo pEntityInfo;
         Interface.Engine->GetPlayerInfo(index, &pEntityInfo);
-        const auto TextSize = ImGui::CalcTextSize(pEntityInfo.m_szName);
-        const auto HorizontalOffset = TextSize.x / 2.f;
-        const auto VerticalOffset = 0.f;
-        draw->AddText(ImGui::GetDefaultFont(), ImGui::GetDefaultFont()->FontSize, ImVec2((bbox.min.x + bbox.max.x) / 2 - HorizontalOffset, bbox.min.y - 7 - VerticalOffset), ImColor(255, 255, 255), pEntityInfo.m_szName);
-        draw->AddText(ImGui::GetDefaultFont(), ImGui::GetDefaultFont()->FontSize, ImVec2((bbox.min.x + bbox.max.x) / 2 - HorizontalOffset + 1.f, bbox.min.y - 7 - VerticalOffset + 1.f), ImColor(0, 0, 0), pEntityInfo.m_szName);
+        CDraw::DrawTextA((bbox.min.x + bbox.max.x) / 2 - ImGui::CalcTextSize(pEntityInfo.m_szName).x / 2, bbox.min.y - 15 - 0, ImColor(255, 255, 255), pEntityInfo.m_szName, true);
+    }
+
+    void RenderSnapline(CBaseEntity* player) {
+        if (!Settings::Visuals.bSnapline) return;
+
+        const auto collideable = player->GetCollideable();
+        const BoundingBox bbox{ collideable->obbMins(), collideable->obbMaxs(), player->ToWorldTransform() };
+        if (!bbox) return;
+        ImVec2& WindowScreenSize = ImGui::GetIO().DisplaySize;
+        ImVec2 p1, p2;
+        p1.x = WindowScreenSize.x / 2;
+        p2.x = (bbox.min.x + bbox.max.x) / 2;
+        p1.y = WindowScreenSize.y;
+        p2.y = bbox.max.y;
+        CDraw::DrawLine(p1.x, p1.y, p2.x, p2.y, ImColor(255, 255, 255), 2, true);
+    }
+
+    void RenderHealthbar(CBaseEntity* player, ImDrawList* draw) {
+        if (!Settings::Visuals.bHealthbar) return;
+
+        const auto collideable = player->GetCollideable();
+        const BoundingBox bbox{ collideable->obbMins(), collideable->obbMaxs(), player->ToWorldTransform() };
+        if (!bbox) return;
+
+        /*Uncomment this when we do a bit better*/
+       /* draw->PushClipRect(bbox.min - ImVec2(5.f, 0.f) + ImVec2(0.0f, (100 - player->GetHealth()) / 100.0f * (bbox.max.y - bbox.min.y)), bbox.min - ImVec2(5.f, 0.f) + ImVec2(3.f + 1.0f, (bbox.max.y - bbox.min.y) + 1.0f));
+        ImColor green = ImColor(0, 255, 0, 255);
+        ImColor yellow = ImColor(255, 255, 0, 255);
+        ImColor red = ImColor(255, 0, 0, 255);
+        ImVec2 min = bbox.min - ImVec2(5.f, 0.f);
+        ImVec2 max = min + ImVec2(3.f, (bbox.max.y - bbox.min.y) / 2.f);
+        draw->AddRectFilled(min + ImVec2(1.f, 1.f), bbox.min - ImVec2(5.f, 0.f) + ImVec2(3.f + 1.f, (bbox.max.y + bbox.min.y) + 1.f), ImColor(0, 0, 0), 0, 0);
+        draw->AddRectFilledMultiColor(ImFloor(min), ImFloor(max), green, green, yellow, yellow);
+        min.y += (bbox.max.y - bbox.min.y) / 2.f;
+        max.y += (bbox.max.y - bbox.min.y) / 2.f;
+        draw->AddRectFilledMultiColor(ImFloor(min), ImFloor(max), yellow, yellow, red, red);
+        draw->PopClipRect();*/
+        draw->PushClipRect(bbox.min - ImVec2(5.f, 0.f) + ImVec2(0.0f, (100 - player->GetHealth()) / 100.0f * (bbox.max.y - bbox.min.y)), bbox.min - ImVec2(5.f, 0.f) + ImVec2(3.f + 1.0f, (bbox.max.y - bbox.min.y) + 1.0f));
+        ImVec2 min = bbox.min - ImVec2(5.f, 0.f);
+        ImVec2 max = min + ImVec2(3.f, (bbox.max.y - bbox.min.y) / 2.f);
+        draw->AddRectFilled(min + ImVec2(1.f, 1.f), bbox.min - ImVec2(5.f, 0.f) + ImVec2(3.f + 1.f, (bbox.max.y + bbox.min.y) + 1.f), ImColor(0, 0, 0));
+        draw->AddRectFilled(ImFloor(min), ImFloor(max), ImColor(0, 255, 0));
+        min.y += (bbox.max.y - bbox.min.y) / 2.f;
+        max.y += (bbox.max.y - bbox.min.y) / 2.f;
+        draw->AddRectFilled(ImFloor(min), ImFloor(max), ImColor(0, 255, 0));
+        draw->PopClipRect();
+
     }
 
 	void Render(ImDrawList* drawList) {
-		if (!(Settings::EnableESP)) return;
-
+		if (!(Settings::Visuals.bEnable)) return;
+        
 		if (!Interface.Engine->IsInGame()) return;
 		CBaseEntity* pLocal = Interface.EntityList->GetEntity(Interface.Engine->GetLocalPlayer());
 		if (!pLocal || pLocal->GetHealth() < 0) return;
@@ -95,6 +155,8 @@ namespace ESP {
 			if (!pEntity || pEntity->GetHealth() == 0 || pEntity == pLocal || pEntity->GetClientClass()->m_nClassID != 0x28) continue;
 			RenderPlayerBox(pEntity, drawList);
             RenderName(pEntity, drawList, i);
+            RenderSnapline(pEntity);
+            RenderHealthbar(pEntity, drawList);
 		}
 	}
 }

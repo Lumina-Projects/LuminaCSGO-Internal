@@ -77,6 +77,9 @@
     <Filter Include="LuminaCSGO\Externals\Valve SDK">
       <UniqueIdentifier>{ff78a45e-6276-456e-a883-52fbfb5c9e12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LuminaCSGO\Externals\FNV">
+      <UniqueIdentifier>{dcb9a7d5-bcd5-4029-bb3f-e270f57b3b5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -227,6 +230,24 @@
     </ClInclude>
     <ClInclude Include="Matrix.h">
       <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>LuminaCSGO\Internals\Features\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="ICVar.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="IPanel.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="fnv.hpp">
+      <Filter>LuminaCSGO\Externals\FNV</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserCMD.h">
+      <Filter>LuminaCSGO\Externals\Valve SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="CDraw.h">
+      <Filter>LuminaCSGO\Internals\Render\Draw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
