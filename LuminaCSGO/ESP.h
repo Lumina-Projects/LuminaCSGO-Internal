@@ -66,21 +66,25 @@ namespace ESP {
 
         switch (Settings::Visuals.Box.iBoxType) {
         case 0:
-            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.max.x, bbox.max.y, ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.max.x, bbox.max.y, ImColor(255, 255, 255), 2);
             break;
         case 1:
-            //draw->AddRectFilled(ImVec2(bbox.min.x, bbox.max.y), ImVec2(bbox.min.x + 1.0f, bbox.max.y - flQuarterHeight), ImColor(255, 255, 255));
-            //draw->AddRectFilled(ImVec2(bbox.min.x, bbox.max.y - 1.0f), ImVec2(bbox.min.x + flQuarterWidth, bbox.max.y), ImColor(255, 255, 255));
-            //draw->AddRectFilled(bbox.max, ImVec2(bbox.max.x - flQuarterWidth, bbox.max.y - 1.0f), ImColor(255, 255, 255));
-            //draw->AddRectFilled(bbox.max, ImVec2(bbox.max.x - 1.0f, bbox.max.y - flQuarterHeight), ImColor(255, 255, 255));
-            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + 1.f, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
-            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 2, true);
-            CDraw::DrawRect(bbox.max.x, bbox.min.y, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 2, true);
-            CDraw::DrawRect(bbox.max.x - 1.0f, bbox.min.y, bbox.max.x, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
-            CDraw::DrawRect(bbox.min.x, bbox.max.y, bbox.min.x + 1.0f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
-            CDraw::DrawRect(bbox.min.x, bbox.max.y - 1.0f, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y, ImColor(255, 255, 255), 2, true);
-            CDraw::DrawRect(bbox.max.x, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y - 1.0f, ImColor(255, 255, 255), 2, true);
-            CDraw::DrawRect(bbox.max.x, bbox.max.y, bbox.max.x - 1.0f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 2, true);
+            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + 1.f, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1);
+            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 1);
+            CDraw::DrawRect(bbox.max.x, bbox.min.y, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 1);
+            CDraw::DrawRect(bbox.max.x - 1.f, bbox.min.y, bbox.max.x, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1);
+            CDraw::DrawRect(bbox.min.x, bbox.max.y, bbox.min.x + 1.f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1);
+            CDraw::DrawRect(bbox.min.x, bbox.max.y - 1.f, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y, ImColor(255, 255, 255), 1);
+            CDraw::DrawRect(bbox.max.x, bbox.max.y, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y + 1.f, ImColor(255, 255, 255), 1);
+            CDraw::DrawRect(bbox.max.x, bbox.max.y, bbox.max.x + 1.f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1);
+            /*CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + 1.f, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1, true);
+            CDraw::DrawRect(bbox.min.x, bbox.min.y, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 1, true);
+            CDraw::DrawRect(bbox.max.x, bbox.min.y, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.min.y + 1.f, ImColor(255, 255, 255), 1, true);
+            CDraw::DrawRect(bbox.max.x - 1.0f, bbox.min.y, bbox.max.x, bbox.min.y + IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1, true);
+            CDraw::DrawRect(bbox.min.x, bbox.max.y, bbox.min.x + 1.0f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1, true);
+            CDraw::DrawRect(bbox.min.x, bbox.max.y - 1.0f, bbox.min.x + IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y, ImColor(255, 255, 255), 1, true);
+            CDraw::DrawRect(bbox.max.x, bbox.max.x - IM_FLOOR((bbox.max.x - bbox.min.x) * 0.25f), bbox.max.y - 1.0f, ImColor(255, 255, 255), 1, true);
+            CDraw::DrawRect(bbox.max.x, bbox.max.y, bbox.max.x - 1.0f, bbox.max.y - IM_FLOOR((bbox.max.y - bbox.min.y) * 0.25f), ImColor(255, 255, 255), 1, true);*/
             break;
         }
 	}
@@ -93,7 +97,7 @@ namespace ESP {
         if (!bbox) return;
         SPlayerInfo pEntityInfo;
         Interface.Engine->GetPlayerInfo(index, &pEntityInfo);
-        CDraw::DrawTextA((bbox.min.x + bbox.max.x) / 2 - ImGui::CalcTextSize(pEntityInfo.m_szName).x / 2, bbox.min.y - 15 - 0, ImColor(255, 255, 255), pEntityInfo.m_szName, true);
+        CDraw::DrawTextA((bbox.min.x + bbox.max.x) / 2 - ImGui::CalcTextSize(pEntityInfo.m_szName).x / 2, bbox.min.y - 15 - 0, ImColor(255, 255, 255), pEntityInfo.m_szName);
     }
 
     void RenderSnapline(CBaseEntity* player) {
@@ -108,7 +112,7 @@ namespace ESP {
         p2.x = (bbox.min.x + bbox.max.x) / 2;
         p1.y = WindowScreenSize.y;
         p2.y = bbox.max.y;
-        CDraw::DrawLine(p1.x, p1.y, p2.x, p2.y, ImColor(255, 255, 255), 2, true);
+        CDraw::DrawLine(p1.x, p1.y, p2.x, p2.y, ImColor(255, 255, 255), 2);
     }
 
     void RenderHealthbar(CBaseEntity* player, ImDrawList* draw) {

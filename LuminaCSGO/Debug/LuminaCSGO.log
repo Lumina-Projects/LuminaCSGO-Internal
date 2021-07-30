@@ -28,58 +28,59 @@ C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(16,120): warning C42
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(16,113): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(18,113): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(18,110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(22,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(22,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(22,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(22,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(22,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(23,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(23,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(23,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(23,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(24,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(24,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(24,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(24,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(25,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(25,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(25,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(25,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(26,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(26,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(26,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(26,64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\CDraw.h(26,84): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(69,73): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(69,61): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(69,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(69,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(72,82): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(72,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(72,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(72,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(73,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(73,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(73,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(73,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(75,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(75,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(75,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(75,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(76,82): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(76,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(76,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(76,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(77,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(77,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(77,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(77,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(78,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(76,67): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(76,55): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(76,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(78,82): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(78,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(78,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(78,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,68): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,56): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(80,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(80,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(80,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(80,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(81,126): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(81,71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(81,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,125): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(79,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(81,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(81,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(81,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(81,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(82,110): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(82,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(82,82): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(82,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(82,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
 C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(82,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(83,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(83,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(83,49): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(83,37): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(96,123): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(96,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(111,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(111,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(111,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(111,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(103,123): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(103,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(118,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(118,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(118,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zanelul\source\repos\LuminaCSGO\LuminaCSGO\ESP.h(118,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   LuminaCSGO.vcxproj -> C:\Users\Zanelul\source\repos\LuminaCSGO\Debug\LuminaCSGO.dll
